@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace databaseC_
 {
@@ -35,10 +36,20 @@ namespace databaseC_
 
         private void btnData_Click(object sender, EventArgs e)
         {
+            string kode =txtKode.Text;
             koneksi.bukaKoneksi();
             try
             {
+                string query = "SELECT Email FROM Customers WHERE CustomerID=@code";
+                SqlCommand con = new SqlCommand(query,koneksi.con);
+                con.Parameters.AddWithValue("@code", kode);
+                SqlDataReader dr = con.ExecuteReader();
 
+                if(dr.Read()) 
+                { 
+                string nama = dr[0].ToString();
+                    MessageBox.Show(nama);
+                }
             }
             catch(Exception ex) 
             {
