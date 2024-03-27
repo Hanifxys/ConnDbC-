@@ -50,6 +50,10 @@ namespace databaseC_
                 string nama = dr[0].ToString();
                     MessageBox.Show(nama);
                 }
+                else
+                {
+                    MessageBox.Show("data kosong");
+                }
             }
             catch(Exception ex) 
             {

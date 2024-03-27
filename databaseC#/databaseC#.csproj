@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataName.Designer.cs">
+      <DependentUpon>DataName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +62,9 @@
     <Compile Include="koneksi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataName.resx">
+      <DependentUpon>DataName.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
